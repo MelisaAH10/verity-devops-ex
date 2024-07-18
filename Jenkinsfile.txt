@@ -60,7 +60,16 @@ pipeline {
 			}
 		}
 		//Code ends for stage Code Analysis
-        
+
+        //Code starts for stage Code Coverage
+		stage('Code Coverage') {
+            steps {
+                //Generate coverage report using Jacoco
+                step([$class: 'JacocoPublisher'])
+            }
+        }
+		//Code ends for stage Code Coverage
+
         // ******ALL CODE TO BE ADDED BELOW THIS COMMENT******
         
     
